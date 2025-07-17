@@ -14,19 +14,19 @@ jobs:
     # 서버 지정
     # Ubuntu, Windows, MacOS 지원
     runs-on: ubuntu-latest
-  strategy:
-    matrix:
-      node-version: [14.x] # 템플릿 기본값: [10.x, 12.x, 14.x]
+    strategy:
+      matrix:
+        node-version: [14.x] # 템플릿 기본값: [10.x, 12.x, 14.x]
 
-  # steps에서 uses와 run의 차이
-  # uses: 존재하는 기능 호출
-  # run: 실행 명령
-  steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - run: npm install
-    - run: npm run build --if-present
-    - run: npm test
+    # steps에서 uses와 run의 차이
+    # uses: 존재하는 기능 호출
+    # run: 실행 명령
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm install
+      - run: npm run build --if-present
+      - run: npm test
