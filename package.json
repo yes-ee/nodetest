@@ -1,0 +1,15 @@
+{
+  "name": "nodetest",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha test.spec.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "mocha": "^11.7.1",
+    "nocha": "^1.1.3"
+  }
+}
